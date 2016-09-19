@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_DJ_ADDRESS_ALL" >
+    <select id="getCuxDjAddressAll" resultClass="srm.entity.CUX_DJ_ADDRESS_ALL">
+        select t.* from CUX_DJ_ADDRESS_ALL t
+    </select>
+    <insert id="insertCuxDjAddressAll" parameterClass="srm.entity.CUX_DJ_ADDRESS_ALL">
+     insert into CUX_DJ_ADDRESS_ALL(dj_header_id,dj_title,dj_publish_date,dj_utl,status,attribute1,attribute2,attribute3,attribute4,attribute5)
+      values 
+      (#dj_header_id:DECIMAL#,#dj_title:VARCHAR#,#dj_publish_date:TIMESTAMP#,#dj_utl,status:VARCHAR#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,
+        #attribute4:VARCHAR#,#attribute5:VARCHAR#)
+  </insert>
+</sqlMap>

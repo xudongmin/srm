@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<!-- 获取物料大类 -->
+<sqlMap namespace="FND_FLEX_VALUE" >
+    <resultMap id="csl_paging_result" class="srm.entity.Material" >
+        <result column="FLEX_VALUE" property="material_value" jdbcType="VARCHAR" />
+        <result column="FLEX_VALUE_MEANING" property="material_name" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="getMaterial" resultMap="csl_paging_result">
+        SELECT FFV.FLEX_VALUE,FFV.FLEX_VALUE_MEANING 
+            FROM APPS.FND_FLEX_VALUES_VL FFV, APPS.FND_FLEX_VALUE_SETS FFS
+            WHERE FFV.FLEX_VALUE_SET_ID = FFS.FLEX_VALUE_SET_ID 
+            AND FFS.FLEX_VALUE_SET_NAME = 'BYD_ITEM_CAT_ONE' 
+            AND LENGTH(ffv.FLEX_VALUE) != LENGTHB(ffv.FLEX_VALUE)
+    </select>
+</sqlMap>

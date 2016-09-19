@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_SRM_SUP_REG_INFO" >
+    <resultMap id="csl_paging_result" class="srm.entity.SupplierRegisterInfo" > 
+        <result column="ID" property="id" jdbcType="DECIMAL" />
+        <result column="SUPREGID" property="supregId" jdbcType="DECIMAL" />
+        <result column="REGISTERED_COMAPNY_NAME" property="registered_comapny_name" jdbcType="VARCHAR" />
+        <result column="CONTANCTS_NAME" property="contancts_name" jdbcType="VARCHAR" />
+        <result column="CONTANCTS_POSITION" property="contancts_position" jdbcType="VARCHAR" />
+        <result column="CONTANCTS_OFFICE_PHONE" property="contancts_office_phone" jdbcType="VARCHAR" />
+        <result column="CONTANCTS_EMAIL" property="contancts_email" jdbcType="VARCHAR" />
+        <result column="CONTANCTS_PHONE" property="contancts_phone" jdbcType="VARCHAR" />
+        <result column="CREATED_BY" property="created_by" jdbcType="DECIMAL" />
+        <result column="CREATION_DATE" property="creation_date" jdbcType="TIMESTAMP" />
+        <result column="LAST_UPDATED_BY" property="last_updated_by" jdbcType="DECIMAL" />
+        <result column="LAST_UPDATE_DATE" property="last_update_date" jdbcType="TIMESTAMP" />
+        <result column="LAST_UPDATE_LOGIN" property="last_update_login" jdbcType="DECIMAL" />
+        <result column="ATTRIBUTE_CATEGORY" property="attribute_category" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE7" property="attribute7" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE8" property="attribute8" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE9" property="attribute9" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE10" property="attribute10" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE11" property="attribute11" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE12" property="attribute12" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE13" property="attribute13" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE14" property="attribute14" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE15" property="attribute15" jdbcType="VARCHAR" />
+    </resultMap> 
+    
+    <insert id="insertSupplierRegisterInfo" parameterClass="srm.entity.SupplierRegisterInfo">
+        insert into APPS.CUX_SRM_SUP_REG_INFO(id,supregId,registered_comapny_name,contancts_name,contancts_position,contancts_office_phone,contancts_email,contancts_phone,
+                                    created_by,creation_date,last_updated_by,last_update_date,last_update_login,attribute_category,attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,attribute10,
+                                    attribute11,attribute12,attribute13,attribute14,attribute15) 
+                            values(APPS.CUX_SRM_SUP_REG_INFO_SEQ.nextval,#supregId:DECIMAL#,#registered_comapny_name:VARCHAR#,#contancts_name:VARCHAR#,#contancts_position:VARCHAR#,#contancts_office_phone:VARCHAR#,#contancts_email:VARCHAR#,#contancts_phone:VARCHAR#,
+                                    #created_by:DECIMAL#,#creation_date:TIMESTAMP#,#last_updated_by:DECIMAL#,#last_update_date:TIMESTAMP#,#last_update_login:DECIMAL#,#attribute_category:VARCHAR#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,#attribute4:VARCHAR#,
+                                    #attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#attribute10:VARCHAR#,#attribute11:VARCHAR#,#attribute12:VARCHAR#,#attribute13:VARCHAR#,#attribute14:VARCHAR#,#attribute15:VARCHAR#)
+    </insert>
+    <select id="getSupRegInfo" resultMap="csl_paging_result" parameterClass="java.util.Map">
+        select * from APPS.CUX_SRM_SUP_REG_INFO t where t.SUPREGID=#supregId:DECIMAL# 
+    </select>
+    <update id="updateSupplierInfoBySupregId" parameterClass="java.util.Map">
+        update APPS.CUX_SRM_SUP_REG_INFO t
+        <dynamic prepend="set">
+            <isNotEmpty prepend="," property="registered_comapny_name" >
+                 t.registered_comapny_name=#registered_comapny_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="contancts_name" >
+                 t.contancts_name=#contancts_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="contancts_position" >
+                 t.contancts_position=#contancts_position:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="contancts_office_phone" >
+                 t.contancts_office_phone=#contancts_office_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="contancts_email" >
+                 t.contancts_email=#contancts_email:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="contancts_phone" >
+                 t.contancts_phone=#contancts_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="created_by" >
+                t.created_by=#created_by:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="creation_date" >
+                t.creation_date=#creation_date:TIMESTAMP#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_updated_by" >
+                t.last_updated_by=#last_updated_by:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_date" >
+                t.last_update_date=#last_update_date:TIMESTAMP#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_login" >
+                t.last_update_login=#last_update_login:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute_category" >
+                t.attribute_category=#attribute_category:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute1" >
+                t.attribute1=#attribute1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute2" >
+                t.attribute2=#attribute2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute3" >
+                t.attribute3=#attribute3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute4" >
+                t.attribute4=#attribute4:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute5" >
+                t.attribute5=#attribute5:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute6" >
+                t.attribute6=#attribute6:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute7" >
+                t.attribute7=#attribute7:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute8" >
+                t.attribute8=#attribute8:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute9" >
+                t.attribute9=#attribute9:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute10" >
+                t.attribute10=#attribute10:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute11" >
+                t.attribute11=#attribute11:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute12" >
+                t.attribute12=#attribute12:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute13" >
+                t.attribute13=#attribute13:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute14" >
+                t.attribute14=#attribute14:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute15" >
+                t.attribute15=#attribute15:VARCHAR#
+            </isNotEmpty>
+        </dynamic>
+        where t.ID=#id:DECIMAL#
+    </update>
+</sqlMap>

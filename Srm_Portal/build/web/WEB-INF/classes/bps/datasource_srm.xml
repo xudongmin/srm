@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig
+PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+<!--     Configure a built-in transaction manager.  If you're using an
+    app server, you probably want to use its transaction manager
+    and a managed datasource -->
+    <settings
+        cacheModelsEnabled="false"
+        enhancementEnabled="true"
+        lazyLoadingEnabled="true"
+        useStatementNamespaces="true"
+    />
+
+
+    <transactionManager type="JDBC" >
+        <dataSource type="SIMPLE">
+            <property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver" />
+            <!--<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@10.9.23.72:1528:CRP2" />-->
+            <property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@10.9.23.35:1526:CRP3" />
+            <!--<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@10.9.23.41:1521:PROD1" />-->
+            <property name="JDBC.Username" value="apps" />
+            <property name="JDBC.Password" value="apps" />
+            <!--<property name="JDBC.Password" value="byd0725apps" />-->
+            <property name="Pool.PingQuery"     value="select 1 from dual" />
+            <property name="Pool.PingEnabled" value="true" />
+            <property name="Pool.PingConnectionsOlderThan" value="0" />
+            <property name="Pool.PingConnectionsNotUsedFor"    value="3600000" />
+        </dataSource>
+    </transactionManager>
+<!--    <transactionManager type="JDBC" commitRequired="false">
+        <dataSource type="JNDI">
+            <property name="DataSource" value="jdbc/USER"/>
+        </dataSource>
+    </transactionManager>-->
+    <sqlMap resource="db/xml/SRM_PURBIDANNOUNCEMENT_SqlMap.xml"/>
+    <sqlMap resource="db/xml/SRM_SYSANNOUNCEMENT_SqlMap.xml"/>
+    <sqlMap resource="db/xml/SRM_USER_BPM_SqlMap.xml"/>
+    <sqlMap resource="db/xml/SRM_GETSERVER_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_SUP_REG_INFO_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_SUP_REG_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_FND_TERRITORIES_VL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_FND_CURRENCIES_VL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_REG_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_FND_FLEX_VALUE_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_ZB_HEADERS_ALL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_PON_ZB_HEADERS_ALL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_TS_HEADERS_ALL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_TZ_HEADERS_ALL_SqlMap.xml"/>
+    <sqlMap resource="db/xml/CUX_SRM_ATTACHMENT_SqlMap.xml"/>
+</sqlMapConfig>

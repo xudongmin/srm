@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_TS_HEADERS_ALL" >
+    <select id="getTsHeadersID" resultClass="java.lang.String">
+        SELECT apps.cux_ts_headers_all_seq.nextval  FROM DUAL
+    </select>
+    <select id="getCuxTsHeadersAll" resultClass="srm.entity.CUX_TS_HEADERS_ALL">
+        select t.* from CUX_TS_HEADERS_ALL t ORDER BY t.ts_date DESC
+    </select>
+    <select id="findTsHeadersListByItems" resultClass="srm.entity.CUX_TS_HEADERS_ALL" parameterClass="java.util.Map" >
+        select t.* from CUX_TS_HEADERS_ALL t where 
+        NVL(t.ts_type, 'X') = NVL(#ts_type:VARCHAR#, NVL(t.ts_type, 'X'))
+        AND NVL(t.ts_title, 'X') = NVL(#ts_title:VARCHAR#, NVL(t.ts_title, 'X'))
+        AND NVL(t.ts_reply, 'X') = NVL(#ts_reply:VARCHAR#, NVL(t.ts_reply, 'X'))
+        AND NVL(t.ts_contact, 'X') = NVL(#ts_contact:VARCHAR#, NVL(t.ts_contact, 'X'))
+        AND NVL(t.ts_header_id, 911) = NVL(#ts_code:DECIMAL#, NVL(t.ts_header_id, 911))
+        AND TRUNC(NVL(t.create_date,SYSDATE)) BETWEEN
+            DECODE(#create_start:TIMESTAMP#,
+                    NULL,
+                    TRUNC(NVL(t.create_date,SYSDATE)),
+                    #create_start:TIMESTAMP#) AND
+            DECODE(#create_end:TIMESTAMP#,
+                   NULL,
+                   TRUNC(NVL(t.create_date, SYSDATE)),
+                   #create_end:TIMESTAMP#)
+        ORDER BY
+            t.ts_date DESC
+    </select>
+    <insert id="insertCuxTsHeadersAllL" parameterClass="srm.entity.CUX_TS_HEADERS_ALL">
+     insert into CUX_TS_HEADERS_ALL(ts_header_id,ts_type,ts_title,ts_description,ts_tel,ts_mail,ts_date,create_date,
+                                    ts_reply,ts_reply_contact,ts_to_time,last_update_date,created_by,attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,reply_person,ts_contact,ts_company,comp_feed_type)
+      values 
+      (#ts_header_id:DECIMAL#,#ts_type:VARCHAR#,#ts_title:VARCHAR#,#ts_description:VARCHAR#,#ts_tel:VARCHAR#,#ts_mail:VARCHAR#,#ts_date:TIMESTAMP#,#create_date:TIMESTAMP#,
+        #ts_reply:VARCHAR#,#ts_reply_contact:VARCHAR#,#ts_to_time:TIMESTAMP#,#last_update_date:TIMESTAMP#,#created_by:DECIMAL#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,
+        #attribute3:VARCHAR#,#attribute4:VARCHAR#,#attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#reply_person:VARCHAR#,#ts_contact:VARCHAR#,#ts_company:VARCHAR#,#comp_feed_type:VARCHAR#)
+  </insert>
+  <update id="updateCuxTsHeadersAllByID" parameterClass="java.util.Map">
+      update CUX_TS_HEADERS_ALL t 
+      set t.ts_reply_contact =  #ts_reply_contact:VARCHAR#,
+      t.ts_to_time = #ts_to_time:TIMESTAMP#,
+      t.last_update_date = #last_update_date:TIMESTAMP#,
+      t.ts_reply = #ts_reply:VARCHAR#,
+      t.created_by = #created_by:DECIMAL#,
+      t.reply_person = #reply_person:VARCHAR#
+      where t.ts_header_id = #ts_header_id:DECIMAL#
+  </update>
+</sqlMap>

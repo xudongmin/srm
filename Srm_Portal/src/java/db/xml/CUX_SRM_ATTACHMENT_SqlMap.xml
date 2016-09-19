@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_SRM_ATTACHMENT" >
+    <select id="getFileID" resultClass="java.lang.String">
+        SELECT apps.cux_srm_attachment_seq.nextval  FROM DUAL
+    </select>
+    <insert id="insertSrmAtt" parameterClass="srm.entity.CUX_SRM_ATTACHMENT">
+        insert into CUX_SRM_ATTACHMENT(id,filename,filetype,filepath,del,header_id,created_by,creation_date,last_updated_by,last_update_date,
+                                       attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,attribute10,realfilename)
+        values
+        (#id:DECIMAL#,#filename:VARCHAR#,#filetype:VARCHAR#,#filepath:VARCHAR#,#del:DECIMAL#,#header_id:DECIMAL#,#created_by:DECIMAL#,#creation_date:TIMESTAMP#,
+        #last_updated_by:DECIMAL#,#last_update_date:TIMESTAMP#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,#attribute4:VARCHAR#,#attribute5:VARCHAR#,
+        #attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#attribute10:VARCHAR#,#realfilename:VARCHAR#)
+    </insert>
+    <select id="getSrmAtt" resultClass="srm.entity.CUX_SRM_ATTACHMENT" parameterClass="java.util.Map">
+        select t.* from CUX_SRM_ATTACHMENT t where t.header_id = #header_id:DECIMAL# and t.filetype = #filetype:VARCHAR#
+    </select>
+    <select id="getSrmAttPath" resultClass="java.lang.String" parameterClass="java.lang.String">
+        select t.filepath from CUX_SRM_ATTACHMENT t where id = #id:DECIMAL#
+    </select>
+</sqlMap>

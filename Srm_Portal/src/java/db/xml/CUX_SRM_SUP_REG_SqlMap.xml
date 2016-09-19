@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_SRM_SUP_REG" >
+    <resultMap id="csl_paging_result" class="srm.entity.SupplierRegister" > 
+        <result column="ID" property="id" jdbcType="DECIMAL" />
+        <result column="BUSINESS_CATEGORY" property="business_category" jdbcType="VARCHAR" />
+        <result column="MATERIAL_CATEGORY" property="material_category" jdbcType="VARCHAR" />
+        <result column="REGISTERED_COMAPNY_NAME" property="registered_comapny_name" jdbcType="VARCHAR" />
+        <result column="REGISTERED_COMAPNY_ENNAME" property="registered_comapny_enname" jdbcType="VARCHAR" />
+        <result column="COMPANY_DESCRIPTION" property="company_description" jdbcType="VARCHAR" />
+        <result column="COMPANY_TYPE" property="company_type" jdbcType="VARCHAR" />
+        <!--<result column="BUSINESS_TYPE" property="business_type" jdbcType="VARCHAR" />-->
+        <result column="MANUFACTURERS_SUPPLIER" property="manufacturers_supplier" jdbcType="VARCHAR" />
+        <result column="AGENT_SUPPLIER" property="agent_supplier" jdbcType="VARCHAR" />
+        <result column="OUTSOURCINGCOMPANY_SUPPLIER" property="outsourcingcompany_supplier" jdbcType="VARCHAR" />
+        <result column="RETAILER_SUPPLIER" property="retailer_supplier" jdbcType="VARCHAR" />
+        <result column="SERVICEPROVIDER_SUPPLIER" property="serviceprovider_supplier" jdbcType="VARCHAR" />
+        <result column="LOGISTICSCARRIERS_SUPPLIER" property="logisticscarriers_supplier" jdbcType="VARCHAR" />
+        <result column="RECLAIMINGAGENTS_SUPPLIER" property="reclaimingagents_supplier" jdbcType="VARCHAR" />
+        <result column="COMPANY_PREVIOUS_NAME" property="company_previous_name" jdbcType="VARCHAR" />
+        <result column="PARENT_COMPANY" property="parent_company" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_COUNTRY" property="register_address_country" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_PROVINCE" property="register_address_province" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_CITY" property="register_address_city" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_TOWN" property="register_address_town" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_ROAD" property="register_address_road" jdbcType="VARCHAR" />
+        <result column="REGISTER_ADDRESS_POSTALCODE" property="register_address_postalcode" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_COUNTRY" property="office_address_country" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_PROVINCE" property="office_address_province" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_CITY" property="office_address_city" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_TOWN" property="office_address_town" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_ROAD" property="office_address_road" jdbcType="VARCHAR" />
+        <result column="OFFICE_ADDRESS_POSTALCODE" property="office_address_postalcode" jdbcType="VARCHAR" />
+        <result column="COMPANY_WEB" property="company_web" jdbcType="VARCHAR" />
+        <result column="CURRENCY" property="currency" jdbcType="VARCHAR" />
+        <result column="REGISTER_CAPITAL" property="register_capital" jdbcType="DECIMAL" />
+        <result column="UNIT" property="unit" jdbcType="VARCHAR" />
+        <result column="WORKER" property="worker" jdbcType="DECIMAL" />
+        <result column="FACTORY_AREA" property="factory_area" jdbcType="DECIMAL" />
+        <result column="FACTORY_PROPERTY" property="factory_property" jdbcType="VARCHAR" />
+        <result column="BUSINESS_LICENSE_NUMBER" property="business_license_number" jdbcType="VARCHAR" />
+        <result column="TAX_REGISTER_NUMBER" property="tax_register_number" jdbcType="VARCHAR" />
+        <result column="ORGANIZATION_CODE" property="organization_code" jdbcType="VARCHAR" />
+        <result column="TAX_TYPE" property="tax_type" jdbcType="VARCHAR" />
+        <result column="COMPANY_REGISTER_DATE" property="company_register_date" jdbcType="TIMESTAMP" />
+        <result column="TAX_RATE" property="tax_rate" jdbcType="DECIMAL" />
+        <result column="CORPORATE_REPRESENTATIVE" property="corporate_representative" jdbcType="VARCHAR" />
+        <result column="GENERAL_MANAGER_NAME" property="general_manager_name" jdbcType="VARCHAR" />
+        <result column="GENERAL_MANAGER_POSITION" property="general_manager_position" jdbcType="VARCHAR" />
+        <result column="GENERAL_MANAGER_OFFICE_PHONE" property="general_manager_office_phone" jdbcType="VARCHAR" />
+        <result column="GENERAL_MANAGER_EMAIL" property="general_manager_email" jdbcType="VARCHAR" />
+        <result column="GENERAL_MANAGER_PHONE" property="general_manager_phone" jdbcType="VARCHAR" />
+        <result column="COMPLETED_NAME" property="completed_name" jdbcType="VARCHAR" />
+        <result column="COMPLETED_POSITION" property="completed_position" jdbcType="VARCHAR" />
+        <result column="COMPLETED_EMAIL" property="completed_email" jdbcType="VARCHAR" />
+        <result column="COMPLETED_PHONE" property="completed_phone" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY" property="original_factory" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY_WEB" property="original_factory_web" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY_NAME" property="original_factory_name" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY_POSITION" property="original_factory_position" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY_EMAIL" property="original_factory_email" jdbcType="VARCHAR" />
+        <result column="ORIGINAL_FACTORY_PHONE" property="original_factory_phone" jdbcType="VARCHAR" />
+        <result column="COMPANY_RANK" property="company_rank" jdbcType="VARCHAR" />
+        <result column="COMPANY_PROPERTY" property="company_property" jdbcType="VARCHAR" />
+        <result column="QUALITY_STANDARD" property="quality_standard" jdbcType="VARCHAR" />
+        <result column="SAFE_QUALITY_CERTIFICATE" property="safe_quality_certificate" jdbcType="VARCHAR" />
+        <result column="BUSINESS_DESTRIBUTION_DOMESTIC" property="business_destribution_domestic" jdbcType="DECIMAL" />
+        <result column="BUSINESS_DESTRIBUTION_OCCIDENT" property="business_destribution_occident" jdbcType="DECIMAL" />
+        <result column="BUSINESS_DESTRIBUTION_ASIAN" property="business_destribution_asian" jdbcType="DECIMAL" />
+        <result column="BUSINESS_DESTRIBUTION_OTHER" property="business_destribution_other" jdbcType="DECIMAL" />
+        <result column="BUSINESS_AREA" property="business_area" jdbcType="VARCHAR" />
+        <result column="YEAR1" property="year1" jdbcType="VARCHAR" />
+        <result column="ANNUAL_TURNOVER1" property="annual_turnover1" jdbcType="DECIMAL" />
+        <result column="YEAR2" property="year2" jdbcType="VARCHAR" />
+        <result column="ANNUAL_TURNOVER2" property="annual_turnover2" jdbcType="DECIMAL" />
+        <result column="YEAR3" property="year3" jdbcType="VARCHAR" />
+        <result column="ANNUAL_TURNOVER3" property="annual_turnover3" jdbcType="DECIMAL" />
+        <result column="CUSTOMER_NAME1" property="customer_name1" jdbcType="VARCHAR" />
+        <result column="THREE_YEAR_TURNOVER1" property="three_year_turnover1" jdbcType="DECIMAL" />
+        <result column="BUSINESS_RANGE1" property="business_range1" jdbcType="VARCHAR" />
+        <result column="CUSTOMER_NAME2" property="customer_name2" jdbcType="VARCHAR" />
+        <result column="THREE_YEAR_TURNOVER2" property="three_year_turnover2" jdbcType="DECIMAL" />
+        <result column="BUSINESS_RANGE2" property="business_range2" jdbcType="VARCHAR" />
+        <result column="CUSTOMER_NAME3" property="customer_name3" jdbcType="VARCHAR" />
+        <result column="THREE_YEAR_TURNOVER3" property="three_year_turnover3" jdbcType="DECIMAL" />
+        <result column="BUSINESS_RANGE3" property="business_range3" jdbcType="VARCHAR" />
+        <result column="FACTORY_ADDRESS1" property="factory_address1" jdbcType="VARCHAR" />
+        <result column="MATERIAL1" property="material1" jdbcType="VARCHAR" />
+        <result column="FACTORY_ADDRESS2" property="factory_address2" jdbcType="VARCHAR" />
+        <result column="MATERIAL2" property="material2" jdbcType="VARCHAR" />
+        <result column="FACTORY_ADDRESS3" property="factory_address3" jdbcType="VARCHAR" />
+        <result column="MATERIAL3" property="material3" jdbcType="VARCHAR" />
+        <result column="CREATED_BY" property="created_by" jdbcType="DECIMAL" />
+        <result column="CREATION_DATE" property="creation_date" jdbcType="TIMESTAMP" />
+        <result column="LAST_UPDATED_BY" property="last_updated_by" jdbcType="DECIMAL" />
+        <result column="LAST_UPDATE_DATE" property="last_update_date" jdbcType="TIMESTAMP" />
+        <result column="LAST_UPDATE_LOGIN" property="last_update_login" jdbcType="DECIMAL" />
+        <result column="ATTRIBUTE_CATEGORY" property="attribute_category" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE7" property="attribute7" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE8" property="attribute8" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE9" property="attribute9" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE10" property="attribute10" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE11" property="attribute11" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE12" property="attribute12" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE13" property="attribute13" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE14" property="attribute14" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE15" property="attribute15" jdbcType="VARCHAR" />
+        
+    </resultMap>
+    
+    <select id="getSupRegID" resultClass="java.lang.String">
+        SELECT APPS.CUX_SRM_SUP_REG_SEQ.nextval  FROM DUAL
+    </select>
+    <insert id="insertSupplierRegister" parameterClass="srm.entity.SupplierRegister">
+        insert into APPS.CUX_SRM_SUP_REG(id,business_category,material_category,registered_comapny_name,registered_comapny_enname,company_description,company_type,manufacturers_supplier,agent_supplier,outsourcingcompany_supplier,retailer_supplier,
+                                    serviceprovider_supplier,logisticscarriers_supplier,reclaimingagents_supplier,company_previous_name,parent_company,register_address_country,register_address_province,register_address_city,register_address_town,register_address_road,
+                                    register_address_postalcode,office_address_country,office_address_province,office_address_city,office_address_town,office_address_road,office_address_postalcode,
+                                    company_web,currency,register_capital,unit,worker,factory_area,factory_property,business_license_number,tax_register_number,organization_code,tax_type,
+                                    company_register_date,tax_rate,corporate_representative,general_manager_name,general_manager_position,general_manager_office_phone,general_manager_email,general_manager_phone,
+                                    completed_name,completed_position,completed_email,completed_phone,original_factory,original_factory_web,original_factory_name,original_factory_position,original_factory_email,original_factory_phone,
+                                    company_rank,company_property,quality_standard,safe_quality_certificate,business_destribution_domestic,business_destribution_occident,business_destribution_asian,business_destribution_other,business_area,
+                                    year1,annual_turnover1,year2,annual_turnover2,year3,annual_turnover3,customer_name1,three_year_turnover1,business_range1,customer_name2,three_year_turnover2,business_range2,customer_name3,three_year_turnover3,
+                                    business_range3,factory_address1,material1,factory_address2,material2,factory_address3,material3,
+                                    created_by,creation_date,last_updated_by,last_update_date,last_update_login,attribute_category,attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,attribute10,
+                                    attribute11,attribute12,attribute13,attribute14,attribute15) 
+        values(#id:DECIMAL#,#business_category:VARCHAR#,#material_category:VARCHAR#,#registered_comapny_name:VARCHAR#,#registered_comapny_enname:VARCHAR#,#company_description:VARCHAR#,#company_type:VARCHAR#,#manufacturers_supplier:VARCHAR#,#agent_supplier:VARCHAR#,#outsourcingcompany_supplier:VARCHAR#,#retailer_supplier:VARCHAR#,#serviceprovider_supplier:VARCHAR#,
+                #logisticscarriers_supplier:VARCHAR#,#reclaimingagents_supplier:VARCHAR#,#company_previous_name:VARCHAR#,#parent_company:VARCHAR#,#register_address_country:VARCHAR#,#register_address_province:VARCHAR#,#register_address_city:VARCHAR#,#register_address_town:VARCHAR#,#register_address_road:VARCHAR#,
+                #register_address_postalcode:VARCHAR#,#office_address_country:VARCHAR#,#office_address_province:VARCHAR#,#office_address_city:VARCHAR#,#office_address_town:VARCHAR#,#office_address_road:VARCHAR#,#office_address_postalcode:VARCHAR#,
+                #company_web:VARCHAR#,#currency:VARCHAR#,#register_capital:DECIMAL#,#unit:VARCHAR#,#worker:DECIMAL#,#factory_area:DECIMAL#,#factory_property:VARCHAR#,#business_license_number:VARCHAR#,#tax_register_number:VARCHAR#,#organization_code:VARCHAR#,
+                #tax_type:VARCHAR#,#company_register_date:TIMESTAMP#,#tax_rate:DECIMAL#,#corporate_representative:VARCHAR#,#general_manager_name:VARCHAR#,#general_manager_position:VARCHAR#,#general_manager_office_phone:VARCHAR#,#general_manager_email:VARCHAR#,
+                #general_manager_phone:VARCHAR#,#completed_name:VARCHAR#,#completed_position:VARCHAR#,#completed_email:VARCHAR#,#completed_phone:VARCHAR#,#original_factory:VARCHAR#,#original_factory_web:VARCHAR#,#original_factory_name:VARCHAR#,
+                #original_factory_position:VARCHAR#,#original_factory_email:VARCHAR#,#original_factory_phone:VARCHAR#,#company_rank:VARCHAR#,#company_property:VARCHAR#,#quality_standard:VARCHAR#,#safe_quality_certificate:VARCHAR#,
+                #business_destribution_domestic:DECIMAL#,#business_destribution_occident:DECIMAL#,#business_destribution_asian:DECIMAL#,#business_destribution_other:DECIMAL#,#business_area:VARCHAR#,#year1:VARCHAR#,#annual_turnover1:DECIMAL#,#year2:VARCHAR#,#annual_turnover2:DECIMAL#,
+                #year3:VARCHAR#,#annual_turnover3:DECIMAL#,#customer_name1:VARCHAR#,#three_year_turnover1:DECIMAL#,#business_range1:VARCHAR#,#customer_name2:VARCHAR#,#three_year_turnover2:DECIMAL#,#business_range2:VARCHAR#,
+                #customer_name3:VARCHAR#,#three_year_turnover3:DECIMAL#,#business_range3:VARCHAR#,#factory_address1:VARCHAR#,#material1:VARCHAR#,#factory_address2:VARCHAR#,#material2:VARCHAR#,#factory_address3:VARCHAR#,#material3:VARCHAR#,
+                #created_by:DECIMAL#,#creation_date:TIMESTAMP#,#last_updated_by:DECIMAL#,#last_update_date:TIMESTAMP#,#last_update_login:DECIMAL#,#attribute_category:VARCHAR#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,#attribute4:VARCHAR#,
+                #attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#attribute10:VARCHAR#,#attribute11:VARCHAR#,#attribute12:VARCHAR#,#attribute13:VARCHAR#,#attribute14:VARCHAR#,#attribute15:VARCHAR#)
+    </insert>
+    <select id="getSupReg" resultMap="csl_paging_result" parameterClass="java.util.Map">
+        select * from APPS.CUX_SRM_SUP_REG t where t.ID=#id:DECIMAL# 
+    </select>
+    <update id="updateSupplierByID" parameterClass="srm.entity.SupplierRegister">
+        update APPS.CUX_SRM_SUP_REG t
+        <dynamic prepend="set">
+            <isNotEmpty prepend="," property="business_category" >
+                t.BUSINESS_CATEGORY= #business_category:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="material_category" >
+                t.material_category=#material_category:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="registered_comapny_name" >
+                t.registered_comapny_name=#registered_comapny_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="registered_comapny_enname" >
+                t.registered_comapny_enname=#registered_comapny_enname:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_description" >
+                t.company_description=#company_description:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_type" >
+                t.company_type=#company_type:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="manufacturers_supplier" >
+                t.manufacturers_supplier=#manufacturers_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="agent_supplier" >
+                t.agent_supplier=#agent_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="outsourcingcompany_supplier" >
+                t.outsourcingcompany_supplier=#outsourcingcompany_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="retailer_supplier" >
+                t.retailer_supplier=#retailer_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="serviceprovider_supplier" >
+                t.serviceprovider_supplier=#serviceprovider_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="logisticscarriers_supplier" >
+                t.logisticscarriers_supplier=#logisticscarriers_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="reclaimingagents_supplier" >
+                t.reclaimingagents_supplier=#reclaimingagents_supplier:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_previous_name" >
+                t.company_previous_name=#company_previous_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="parent_company" >
+                t.parent_company=#parent_company:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_country" >
+                t.register_address_country=#register_address_country:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_province" >
+                t.register_address_province=#register_address_province:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_city" >
+                t.register_address_city=#register_address_city:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_town" >
+                t.register_address_town=#register_address_town:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_road" >
+                t.register_address_road=#register_address_road:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_address_postalcode" >
+                t.register_address_postalcode=#register_address_postalcode:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_country" >
+                t.office_address_country=#office_address_country:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_province" >
+                t.office_address_province=#office_address_province:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_city" >
+                t.office_address_city=#office_address_city:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_town" >
+                t.office_address_town=#office_address_town:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_road" >
+                t.office_address_road=#office_address_road:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="office_address_postalcode" >
+                t.office_address_postalcode=#office_address_postalcode:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_web" >
+                t.company_web=#company_web:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="currency" >
+                t.currency=#currency:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="register_capital" >
+                t.register_capital=#register_capital:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="unit" >
+                t.unit=#unit:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="worker" >
+                t.worker=#worker:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="factory_area" >
+                t.factory_area=#factory_area:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="factory_property" >
+                t.factory_property=#factory_property:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_license_number" >
+                t.business_license_number=#business_license_number:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="tax_register_number" >
+                t.tax_register_number=#tax_register_number:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="organization_code" >
+                t.organization_code=#organization_code:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="tax_type" >
+                t.tax_type=#tax_type:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_register_date" >
+                t.company_register_date=#company_register_date:TIMESTAMP#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="tax_rate" >
+                t.tax_rate=#tax_rate:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="corporate_representative" >
+                t.corporate_representative=#corporate_representative:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="general_manager_name" >
+                t.general_manager_name=#general_manager_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="general_manager_position" >
+                t.general_manager_position=#general_manager_position:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="general_manager_office_phone" >
+                t.general_manager_office_phone=#general_manager_office_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="general_manager_email" >
+                t.general_manager_email=#general_manager_email:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="general_manager_phone" >
+                t.general_manager_phone=#general_manager_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="completed_name" >
+                t.completed_name=#completed_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="completed_position" >
+                t.completed_position=#completed_position:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="completed_email" >
+                t.completed_email=#completed_email:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="completed_phone" >
+                t.completed_phone=#completed_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory" >
+                t.original_factory=#original_factory:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory_web" >
+                t.original_factory_web=#original_factory_web:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory_name" >
+                t.original_factory_name=#original_factory_name:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory_position" >
+                t.original_factory_position=#original_factory_position:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory_email" >
+                t.original_factory_email=#original_factory_email:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="original_factory_phone" >
+                t.original_factory_phone=#original_factory_phone:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_rank" >
+                t.company_rank=#company_rank:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="company_property" >
+                t.company_property=#company_property:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="quality_standard" >
+                t.quality_standard=#quality_standard:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="safe_quality_certificate" >
+                t.safe_quality_certificate=#safe_quality_certificate:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_destribution_domestic" >
+                t.business_destribution_domestic=#business_destribution_domestic:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_destribution_occident" >
+                t.business_destribution_occident=#business_destribution_occident:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_destribution_asian" >
+                t.business_destribution_asian=#business_destribution_asian:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_destribution_other" >
+                t.business_destribution_other=#business_destribution_other:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_area" >
+                t.business_area=#business_area:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="year1" >
+                t.year1=#year1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="annual_turnover1" >
+                t.annual_turnover1=#annual_turnover1:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="year2" >
+                t.year2=#year2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="annual_turnover2" >
+                t.annual_turnover2=#annual_turnover2:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="year3" >
+                t.year3=#year3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="annual_turnover3" >
+                t.annual_turnover3=#annual_turnover3:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="customer_name1" >
+                t.customer_name1=#customer_name1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="three_year_turnover1" >
+                t.three_year_turnover1=#three_year_turnover1:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_range1" >
+                t.business_range1=#business_range1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="customer_name2" >
+                t.customer_name2=#customer_name2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="three_year_turnover2" >
+                t.three_year_turnover2=#three_year_turnover2:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_range2" >
+                t.business_range2=#business_range2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="customer_name3" >
+                t.customer_name3=#customer_name3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="three_year_turnover3" >
+                t.three_year_turnover3=#three_year_turnover3:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="business_range3" >
+                t.business_range3=#business_range3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="factory_address1" >
+                t.factory_address1=#factory_address1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="material1" >
+                t.material1=#material1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="factory_address2" >
+                t.factory_address2=#factory_address2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="material2" >
+                t.material2=#material2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="factory_address3" >
+                t.factory_address3=#factory_address3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="material3" >
+                t.material3=#material3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="created_by" >
+                t.created_by=#created_by:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="creation_date" >
+                t.creation_date=#creation_date:TIMESTAMP#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_updated_by" >
+                t.last_updated_by=#last_updated_by:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_date" >
+                t.last_update_date=#last_update_date:TIMESTAMP#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_login" >
+                t.last_update_login=#last_update_login:DECIMAL#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute_category" >
+                t.attribute_category=#attribute_category:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute1" >
+                t.attribute1=#attribute1:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute2" >
+                t.attribute2=#attribute2:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute3" >
+                t.attribute3=#attribute3:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute4" >
+                t.attribute4=#attribute4:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute5" >
+                t.attribute5=#attribute5:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute6" >
+                t.attribute6=#attribute6:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute7" >
+                t.attribute7=#attribute7:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute8" >
+                t.attribute8=#attribute8:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute9" >
+                t.attribute9=#attribute9:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute10" >
+                t.attribute10=#attribute10:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute11" >
+                t.attribute11=#attribute11:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute12" >
+                t.attribute12=#attribute12:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute13" >
+                t.attribute13=#attribute13:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute14" >
+                t.attribute14=#attribute14:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="attribute15" >
+                t.attribute15=#attribute15:VARCHAR#
+            </isNotEmpty>
+        </dynamic>
+        where t.ID=#id:DECIMAL#
+    </update>
+</sqlMap>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_ZB_HEADERS_ALL" >
+    <select id="getZbHeadersAllById" resultClass="srm.entity.CUX_ZB_HEADERS_ALL" parameterClass ="java.util.Map">
+        select * from APPS.CUX_ZB_HEADERS_ALL t where zb_header_id = #zb_header_id:DECIMAL#
+    </select>
+    <select id="getZbHeadersAll" resultClass="srm.entity.CUX_ZB_HEADERS_ALL">
+        select * from APPS.CUX_ZB_HEADERS_ALL t ORDER BY t.zb_creation_date desc
+    </select>
+    <insert id="insertZbHeadersAll" parameterClass="srm.entity.CUX_ZB_HEADERS_ALL">
+        insert into apps.CUX_ZB_HEADERS_ALL(zb_header_id,zb_project_description,zb_project_city,zb_project_date,zb_project_address,zb_flie_je,zb_vendor_bond,zb_corporation,
+									zb_buyer,zb_contactor,zb_tel,zb_mail,zb_answer_date,zb_bid_start_date,zb_bid_end_date,zb_open_date,zb_appeal_date,zb_enrol_end_date,
+									zb_memo,zb_status,zb_created_by,zb_creation_date,zb_last_updated_by,zb_last_update_date,approve_by,attribute1,attribute2,attribute3,
+									attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,zb_project_no,zb_last_person,zb_start_person,zb_approve_person,zb_type)
+        values 
+        (#zb_header_id:DECIMAL#,#zb_project_description:VARCHAR#,#zb_project_city:VARCHAR#,#zb_project_date:TIMESTAMP#,#zb_project_address:VARCHAR#,#zb_flie_je:VARCHAR#,
+            #zb_vendor_bond:VARCHAR#,#zb_corporation:VARCHAR#,#zb_buyer:VARCHAR#,#zb_contactor:VARCHAR#,#zb_tel:VARCHAR#,#zb_mail:VARCHAR#,#zb_answer_date:TIMESTAMP#,
+            #zb_bid_start_date:TIMESTAMP#,#zb_bid_end_date:TIMESTAMP#,#zb_open_date:TIMESTAMP#,#zb_appeal_date:TIMESTAMP#,#zb_enrol_end_date:TIMESTAMP#,#zb_memo:VARCHAR#,
+            #zb_status:VARCHAR#,#zb_created_by:DECIMAL#,#zb_creation_date:TIMESTAMP#,#zb_last_updated_by:DECIMAL#,#zb_last_update_date:TIMESTAMP#,#approve_by:DECIMAL#,
+            #attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,#attribute4:VARCHAR#,#attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,
+            #attribute8:VARCHAR#,#attribute9:VARCHAR#,#zb_project_no:VARCHAR#,#zb_last_person:VARCHAR#,#zb_start_person:VARCHAR#,#zb_approve_person:VARCHAR#,#zb_type:VARCHAR#)
+  </insert>
+  <select id="findZbHeadersListByItems" resultClass="srm.entity.CUX_ZB_HEADERS_ALL" parameterClass="java.util.Map">
+        select t.* from CUX_ZB_HEADERS_ALL t where 
+        NVL(t.zb_type, 'X') = NVL(#zb_type:VARCHAR#, NVL(t.zb_type, 'X'))
+        AND NVL(t.zb_project_description, 'X') = NVL(#zb_project_description:VARCHAR#, NVL(t.zb_project_description, 'X'))
+        AND NVL(t.zb_project_no, 'X') = NVL(#zb_project_no:VARCHAR#, NVL(t.zb_project_no, 'X'))
+        AND NVL(t.zb_project_address, 'X') = NVL(#zb_project_address:VARCHAR#, NVL(t.zb_project_address, 'X'))
+        AND NVL(t.zb_start_person, 'X') = NVL(#zb_start_person:VARCHAR#, NVL(t.zb_start_person, 'X'))
+        AND NVL(t.zb_buyer, 'X') = NVL(#zb_buyer:VARCHAR#, NVL(t.zb_buyer, 'X'))
+        AND NVL(to_char(t.zb_creation_date,'yyyy-MM-dd'),SYSDATE) = NVL(#zb_creation_date:VARCHAR#,NVL(to_char(t.zb_creation_date,'yyyy-MM-dd'),SYSDATE))
+        AND NVL(to_char(t.zb_enrol_end_date,'yyyy-MM-dd'),SYSDATE) = NVL(#zb_enrol_end_date:VARCHAR#,NVL(to_char(t.zb_enrol_end_date,'yyyy-MM-dd'),SYSDATE))
+        ORDER BY t.zb_creation_date desc
+  </select>
+  <delete id ="deleteZbHeadersAllById" parameterClass ="java.util.Map">
+      delete from apps.CUX_ZB_HEADERS_ALL where zb_header_id = #zb_header_id:DECIMAL#
+  </delete>
+  <select id="getZbHeadersID" resultClass="java.lang.String">
+        SELECT apps.cux_zb_headers_all_seq.nextval  FROM DUAL
+    </select>
+</sqlMap>

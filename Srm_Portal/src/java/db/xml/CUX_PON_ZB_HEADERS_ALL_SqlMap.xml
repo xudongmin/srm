@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_PON_ZB_HEADERS_ALL" >
+    <select id="getPonZbHeadersAll" resultClass="srm.entity.CUX_PON_ZB_HEADERS_ALL">
+        select t.* from CUX_PON_ZB_HEADERS_ALL t
+    </select>
+    <select id="getPonZbHeadersAllById" resultClass="srm.entity.CUX_PON_ZB_HEADERS_ALL" parameterClass="java.util.Map">
+        select t.* from CUX_PON_ZB_HEADERS_ALL t where t.zb_header_id = #zb_header_id:DECIMAL#
+    </select>
+    <insert id="insertPonZbHeadersAll" parameterClass="srm.entity.CUX_PON_ZB_HEADERS_ALL">
+     insert into CUX_PON_ZB_HEADERS_ALL(zb_header_id,zb_project_description,segment1,description,contactor,tel,mail,register,item_type,memo,status,created_by,creation_date,last_updated_by,last_update_date,zb_project_no,
+                                        attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9)
+      values 
+      (#zb_header_id:DECIMAL#,#zb_project_description:VARCHAR#,#segment1:VARCHAR#,#description:VARCHAR#,#contactor:VARCHAR#,#tel:VARCHAR#,#mail:VARCHAR#,#register:VARCHAR#,
+        #item_type:VARCHAR#,#memo:VARCHAR#,#status:VARCHAR#,#created_by:VARCHAR#,#creation_date:TIMESTAMP#,#last_updated_by:VARCHAR#,#last_update_date:TIMESTAMP#,#zb_project_no:VARCHAR#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,
+        #attribute4:VARCHAR#,#attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#)
+  </insert>
+    <delete id ="deletePonZbHeadersAllById" parameterClass ="java.util.Map">
+      delete from apps.CUX_PON_ZB_HEADERS_ALL where zb_header_id = #zb_header_id:DECIMAL#
+    </delete>
+    <select id = "getSupCodeBySupName" parameterClass = "java.lang.String" resultClass="java.lang.String">
+        select t.segment1 from AP.AP_SUPPLIERS t where t.vendor_name = #vendor_name:VARCHAR#
+    </select>
+</sqlMap>

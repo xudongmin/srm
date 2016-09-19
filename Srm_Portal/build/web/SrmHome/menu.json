@@ -1,0 +1,46 @@
+{ "pop_60013" :{ 
+    "childList" :[
+        {"des" : "竞价","id" : "0001","hpage" : "index.jsp"},
+        {"des" : "投标/报价","id" : "0002","hpage" : "index.jsp"}
+    ],
+    "des" : "洽谈", "id" : "001", "hpage" : "index.jsp" 
+    },
+    
+    "pop_60014" :{ 
+    "childList" :[
+        {"des" : "订单管理","id" : "1001","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "交货计划","id" : "1002","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "送货管理","id" : "1003","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "对账管理","id" : "1004","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "库存查询","id" : "1005","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"}
+    ],
+    "des" : "供需协同", "id" : "002", "hpage" : "index.jsp" 
+    },
+    
+    "pop_60015" :{ 
+    "childList" :[
+        {"des" : "系统公告","id" : "2001","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "采购公告","id" : "2002","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "在线沟通","id" : "2003","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"}
+    ],
+    "des" : "信息公告", "id" : "003", "hpage" : "index.jsp" 
+    },
+    
+    "pop_60016" :{ 
+    "childList" :[
+        {"des" : "ROHS","id" : "3001","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "样品","id" : "3002","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "来料","id" : "3003","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"}
+    ],
+    "des" : "质量管理", "id" : "004", "hpage" : "index.jsp" 
+    },
+    
+    "pop_60017" :{ 
+    "childList" :[
+        {"des" : "文控","id" : "4001","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "技术资料","id" : "4002","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"},
+        {"des" : "培训资料","id" : "4003","hpage" : "index.jsp","protocol": "http","scope": "/spmanage/PrdDemand.ftl","subsyproject": "","servernm": "scmpotest.byd.com.cn"}
+    ],
+    "des" : "资料共享", "id" : "005", "hpage" : "index.jsp" 
+    }
+}

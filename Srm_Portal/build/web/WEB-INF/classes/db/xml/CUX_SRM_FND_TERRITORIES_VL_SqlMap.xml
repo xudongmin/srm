@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<!-- 获取国家和代码 -->
+<sqlMap namespace="FND_TERRITORIES_VL" >
+    <resultMap id="csl_paging_result" class="srm.entity.Country" >
+        <result column="TERRITORY_SHORT_NAME" property="country_name" jdbcType="VARCHAR" />
+        <result column="TERRITORY_CODE" property="country_code" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="getCountry" resultMap="csl_paging_result">
+        SELECT t.TERRITORY_CODE,t.TERRITORY_SHORT_NAME FROM APPS.FND_TERRITORIES_VL t  where t.OBSOLETE_FLAG = 'N' ORDER BY CASE WHEN t.TERRITORY_CODE = 'CN' THEN 0 ELSE 1 END 
+    </select>
+</sqlMap>

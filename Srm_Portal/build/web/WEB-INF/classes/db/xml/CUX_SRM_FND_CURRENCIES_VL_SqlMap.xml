@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<!-- 获取货币单位 -->
+<sqlMap namespace="FND_CURRENCIES_VL" >
+    <resultMap id="csl_paging_result" class="srm.entity.Currency" >
+        <result column="NAME" property="currency_name" jdbcType="VARCHAR" />
+        <result column="CURRENCY_CODE" property="currency_code" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="getCurrency"  resultMap="csl_paging_result">
+        select t.CURRENCY_CODE,t.NAME from APPS.FND_CURRENCIES_VL t where t.ENABLED_FLAG = 'Y' order by case when t.CURRENCY_CODE='RMB' then 0 else 1 END
+    </select>
+</sqlMap>

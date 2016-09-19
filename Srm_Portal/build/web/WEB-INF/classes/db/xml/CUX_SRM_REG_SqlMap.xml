@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<!-- 调用存储过程将表中供应商信息插入oracle标准表中 -->
+<sqlMap namespace="CUX_SRM_SUP_REG">
+    <parameterMap id="srm_sup_reg" class="java.util.Map">
+        <parameter property="p_reg_id" javaType="java.lang.String" jdbcType="VARCHAR" mode="IN"/>
+        <parameter property="p_error" javaType="java.lang.String" jdbcType="VARCHAR" mode="OUT"/>
+        <parameter property="p_error_msg" javaType="java.lang.String" jdbcType="VARCHAR" mode="OUT"/>
+    </parameterMap>
+    <procedure id="supplier_register" parameterMap="srm_sup_reg">
+         {call apps.cux_pos_supplier_regist_pkg.import_supplier(?,?,?)}
+    </procedure>
+</sqlMap>

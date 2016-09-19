@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_TZ_HEADERS_ALL" >
+    <select id="getTzHeadersAll" resultClass="srm.entity.CUX_TZ_HEADERS_ALL">
+        select t.* from CUX_TZ_HEADERS_ALL t
+    </select>
+    <insert id="insertTzHeadersAll" parameterClass="srm.entity.CUX_TZ_HEADERS_ALL">
+     insert into CUX_TZ_HEADERS_ALL(tz_header_id,tz_title,tz_description,tz_date,create_date,created_by,tz_created_person,approve_by,tz_approve_person,tz_approve_date,tz_approve_result,last_update_date,
+                                        attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,file_id)
+      values 
+      (#tz_header_id:DECIMAL#,#tz_title:VARCHAR#,#tz_description:VARCHAR#,#tz_date:TIMESTAMP#,#create_date:TIMESTAMP#,#created_by:DECIMAL#,#tz_created_person:VARCHAR#,#approve_by:DECIMAL#,
+        #tz_approve_person:VARCHAR#,#tz_approve_date:TIMESTAMP#,#tz_approve_result:VARCHAR#,#last_update_date:TIMESTAMP#,#attribute1:VARCHAR#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,
+        #attribute4:VARCHAR#,#attribute5:VARCHAR#,#attribute6:VARCHAR#,#attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#file_id:DECIMAL#)
+  </insert>
+</sqlMap>

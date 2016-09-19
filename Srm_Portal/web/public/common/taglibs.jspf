@@ -1,0 +1,31 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<c:set var="jsessionid" value="${pageContext.request.requestedSessionId}" />
+<%
+    if (session.getAttribute("language") == null) {//language
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (int idx = 0; idx < cookies.length; idx++) {
+                Cookie cookie = cookies[idx];
+                if ("language".equalsIgnoreCase(cookie.getName())) {
+                    session.setAttribute("language", cookie.getValue());
+                }
+            }
+        }
+        if (session.getAttribute("language") == null) {
+            session.setAttribute("language", "zh_CN");
+            //session.setAttribute("language", "en_US");
+        }
+    }
+
+%>
+
+
+<fmt:setLocale value= "${language}" scope="session" ></fmt:setLocale>
+<fmt:setBundle basename="xiaoxi" var="xiaoxi"></fmt:setBundle>
+<fmt:setBundle basename="messages" var="messages"></fmt:setBundle>
+<fmt:setBundle basename="xieyi" var="xieyi"></fmt:setBundle>
+<fmt:setBundle basename="biaodan" var="biaodan"></fmt:setBundle>

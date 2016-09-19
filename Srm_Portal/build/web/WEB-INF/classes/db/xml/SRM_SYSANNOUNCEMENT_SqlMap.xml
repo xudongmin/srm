@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<sqlMap namespace="sys_announcement" >
+    <resultMap id="sysAnnouncement" class="srm.entity.SysAnnouncement" > 
+        <result column="ID" property="id" jdbcType="DECIMAL" /> 
+        <result column="TITLE" property="title" jdbcType="VARCHAR" /> 
+        <result column="ANNOUNCE_CONTENT" property="content" jdbcType="VARCHAR" /> 
+        <result column="ANNOUNCER" property="announcer" jdbcType="VARCHAR" /> 
+        <result column="CREATED_BY" property="created_by" jdbcType="INTEGER" /> 
+        <result column="CREATION_DATE" property="creation_date" jdbcType="DATE" /> 
+        <result column="CONTEXTID" property="strContextId" jdbcType="DECIMAL" /> 
+        <result column="LAST_UPDATED_BY" property="last_updated_by" jdbcType="INTEGER" /> 
+        <result column="LAST_UPDATE_DATE" property="last_update_date" jdbcType="DATE" /> 
+        <result column="LAST_UPDATE_LOGIN" property="last_update_login" jdbcType="INTEGER" /> 
+        <result column="STATUS" property="status" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE_CATEGORY" property="attribute_category" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE1" property="attr1" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE2" property="attr2" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE3" property="attr3" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE4" property="attr4" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE5" property="attr5" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE6" property="attr6" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE7" property="attr7" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE8" property="attr8" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE9" property="attr9" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE10" property="attr10" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE11" property="attr11" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE12" property="attr12" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE13" property="attr13" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE14" property="attr14" jdbcType="VARCHAR" /> 
+        <result column="ATTRIBUTE15" property="attr15" jdbcType="VARCHAR" /> 
+    </resultMap> 
+    <select id="getSysAnnouncement" resultMap="sysAnnouncement" parameterClass="java.util.Map">
+        select t.* from APPS.CUX_SRM_SYSANC_VIEW t 
+        <dynamic prepend="where">
+            <isNotNull prepend="and" property="strContextId" >
+                t.CONTEXTID=#strContextId:DECIMAL# 
+            </isNotNull>
+        </dynamic>
+    </select>
+    <select id="getAllSysAnnouncement" resultMap="sysAnnouncement" parameterClass="java.util.Map">
+        select * from APPS.CUX_SRM_SYSANC_VIEW t ORDER BY CONTEXTID DESC 
+    </select>
+    <insert id = "insertSysAnnouncement" parameterClass="java.util.Map">
+        insert into APPS.CUX_SRM_SYSANNOUNCEMENT 
+        (ID,TITLE,ANNOUNCE_CONTENT,ANNOUNCER,CREATED_BY,CREATION_DATE,CONTEXTID,LAST_UPDATED_BY,LAST_UPDATE_DATE,LAST_UPDATE_LOGIN,STATUS,ATTRIBUTE_CATEGORY,
+        ATTRIBUTE1,ATTRIBUTE2,ATTRIBUTE3,ATTRIBUTE4,ATTRIBUTE5,ATTRIBUTE6,ATTRIBUTE7,ATTRIBUTE8,ATTRIBUTE9,ATTRIBUTE10,ATTRIBUTE11,ATTRIBUTE12,ATTRIBUTE13,ATTRIBUTE14,ATTRIBUTE15)
+        values 
+        (apps.cux_sysanc_seq.nextval,#title:VARCHAR#,#content:VARCHAR#,#announcer:VARCHAR#,#created_by:INTEGER#,sysdate,apps.cux_srm_sys_seq.nextval,#last_updated_by:INTEGER#,#last_update_date:DATE#,#last_update_login:INTEGER#,#status:VARCHAR#,#attribute_category:VARCHAR#,
+        #attr1:VARCHAR#,#attr2:VARCHAR#,#attr3:VARCHAR#,#attr4:VARCHAR#,#attr5:VARCHAR#,#attr6:VARCHAR#,#attr7:VARCHAR#,#attr8:VARCHAR#,#attr9:VARCHAR#,#attr10:VARCHAR#,#attr11:VARCHAR#,#attr12:VARCHAR#,#attr13:VARCHAR#,#attr14:VARCHAR#,#attr15:VARCHAR#)
+    </insert>
+    <update id = "updateSysAnnouncement" parameterClass="java.util.Map">
+        UPDATE APPS.CUX_SRM_SYSANNOUNCEMENT T
+        <dynamic prepend="set">
+            <isNotEmpty prepend="," property="title" >
+                t.TITLE= #title:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="content" >
+                t.ANNOUNCE_CONTENT= #content:VARCHAR#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_date" >
+                t.LAST_UPDATE_DATE= sysdate
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_updated_by" >
+                t.LAST_UPDATED_BY= #last_updated_by:INTEGER#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="last_update_login" >
+                t.LAST_UPDATE_LOGIN= #last_update_login:INTEGER#
+            </isNotEmpty>
+            <isNotEmpty prepend="," property="status" >
+                t.STATUS= #status:VARCHAR#
+            </isNotEmpty>
+        </dynamic>
+        where t.CONTEXTID=#strContextId:DECIMAL#
+    </update>
+</sqlMap>

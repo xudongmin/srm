@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="CUX_ZB_DOCUMENTS" >
+    <select id="getZbDocuments" resultClass="srm.entity.CUX_ZB_DOCUMENTS">
+        select t.* from CUX_ZB_DOCUMENTS t
+    </select>
+    <insert id="insertZbDocuments" parameterClass="srm.entity.CUX_ZB_DOCUMENTS">
+     insert into CUX_ZB_DOCUMENTS(document_id,creation_date,created_by,last_update_date,last_updated_by,datatype_id,datatype_name,description,file_name,category_description,title,orig_doc_id,
+                                  attribute1,attribute2,attribute3,attribute4,attribute5,attribute6,attribute7,attribute8,attribute9,created_person,last_updated_person,header_id)
+      values 
+      (#document_id:DECIMAL#,#creation_date:TIMESTAMP#,#created_by:DECIMAL#,#last_updated_by:DECIMAL#,#datatype_id:DECIMAL#,#datatype_name:VARCHAR#,#description:VARCHAR#,#file_name:VARCHAR#,
+        #category_description:VARCHAR#,#title:VARCHAR#,#orig_doc_id:DECIMAL#,#attribute2:VARCHAR#,#attribute3:VARCHAR#,#attribute4:VARCHAR#,#attribute5:VARCHAR#,#attribute6:VARCHAR#,
+        #attribute7:VARCHAR#,#attribute8:VARCHAR#,#attribute9:VARCHAR#,#created_person:VARCHAR#,#last_updated_person:VARCHAR#,#header_id:DECIMAL#)
+  </insert>
+</sqlMap>
